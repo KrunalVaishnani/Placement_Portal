@@ -1,0 +1,164 @@
+﻿@model Placement_Portal.Areas.Admin.Models.StudentDetailsModel;
+<div >
+<div class="container mt-4">
+    <div class="card shadow-lg p-4">
+        <div class="card-header bg-primary text-white text-center" >
+                <h2 class ="mb-0">@(Model.StudentID == 0 ? "Create New Student" : "Edit Student")</h2>
+        </div>
+
+            <div class="card-body" style="padding-top:20px">
+            <form asp-action="SaveStudent" method="post" enctype="multipart/form-data" class="row g-3">
+                @if (Model.StudentID > 0)
+                {
+                    <input type="hidden" asp-for="StudentID" />
+                }
+
+                <!-- Student Name -->
+                <div class="col-md-6">
+                    <label for="StudentName" class="form-label">Student Name</label>
+                    <input asp-for="StudentName" class="form-control" placeholder="Enter Student Name"  />
+                    <span asp-validation-for="StudentName" class="text-danger"></span>
+                </div>
+
+                <!-- Enrollment No -->
+                <div class="col-md-6">
+                    <label for="EnrollmentNo" class="form-label">Enrollment No</label>
+                    <input asp-for="Enrollment_No" class="form-control" placeholder="Enter Enrollment Number"  />
+                    <span asp-validation-for="Enrollment_No" class="text-danger"></span>
+                </div>
+
+                <!-- Gender Dropdown -->
+                <div class="col-md-6">
+                    <label for="Gender" class="form-label">Gender</label>
+                    <select asp-for="Gender" class="form-select" >
+                        <option value="">-- Select Gender --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="col-md-6">
+                    <label for="DateOfBirth" class="form-label">Date of Birth</label>
+                    <input type="date" asp-for="DateOfBirth" class="form-control"  />
+                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                </div>
+
+                <!-- Phone No -->
+                <div class="col-md-6">
+                    <label for="Phone_No" class="form-label">Phone No</label>
+                    <input asp-for="Phone_No" class="form-control" placeholder="Enter Phone Number"  />
+                    <span asp-validation-for="Phone_No" class="text-danger"></span>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-6">
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="email" asp-for="Email" class="form-control" placeholder="Enter Email"  />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <!-- Address -->
+                <div class="col-12">
+                    <label for="Address" class="form-label">Address</label>
+                    <textarea asp-for="Address" class="form-control" rows="2" placeholder="Enter Address" ></textarea>
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <!-- SSC & HSC Details -->
+                <div class="col-md-6">
+                    <label for="SSC_Percentage" class="form-label">SSC Percentage</label>
+                    <input asp-for="SSC_Percentage" class="form-control" placeholder="Enter SSC Percentage"  />
+                    <span asp-validation-for="SSC_Percentage" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="YearOfPassingSSC" class="form-label">Year of Passing SSC</label>
+                    <input asp-for="YearOfPassingSSC" class="form-control" placeholder="Enter Year of Passing SSC"  />
+                    <span asp-validation-for="YearOfPassingSSC" class="text-danger"></span>
+                </div>
+
+                <!-- HSC & UG Details -->
+                <div class="col-md-6">
+                    <label for="HSC_Percentage" class="form-label">HSC Percentage</label>
+                    <input asp-for="HSC_Percentage" class="form-control" placeholder="Enter HSC Percentage" />
+                    <span asp-validation-for="HSC_Percentage" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="YearOfPassingHSC" class="form-label">Year of Passing HSC</label>
+                    <input asp-for="YearOfPassingHSC" class="form-control" placeholder="Enter Year of Passing HSC" />
+                    <span asp-validation-for="YearOfPassingHSC" class="text-danger"></span>
+                </div>
+
+                <!-- UG CGPA & Year of Passing -->
+                <div class="col-md-6">
+                    <label for="UG_CGPA" class="form-label">UG CGPA</label>
+                    <input asp-for="UG_CGPA" class="form-control" placeholder="Enter UG CGPA" />
+                    <span asp-validation-for="UG_CGPA" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="YearOfPassingUG" class="form-label">Year of Passing UG</label>
+                    <input asp-for="YearOfPassingUG" class="form-control" placeholder="Enter Year of Passing UG" />
+                    <span asp-validation-for="YearOfPassingUG" class="text-danger"></span>
+                </div>
+
+                <!-- Skills -->
+                <div class="col-12">
+                    <label for="Skills" class="form-label">Skills</label>
+                    <textarea asp-for="Skills" class="form-control" rows="2" placeholder="Enter Skills"></textarea>
+                    <span asp-validation-for="Skills" class="text-danger"></span>
+                </div>
+
+                <!-- Resume Upload -->
+                <div class="col-md-6">
+                    <label for="Resume" class="form-label">Resume (PDF, Max 2MB)</label>
+                    <input type="file" name="resumeFile" class="form-control" accept=".pdf" id="resumeFile" />
+                    <span asp-validation-for="Resume" class="text-danger"></span>
+                </div>
+
+                <!-- Image Upload -->
+                <div class="col-md-6">
+                    <label for="Image" class="form-label">Image (JPG, PNG, Max 1MB)</label>
+                    <input type="file" name="imageFile" class="form-control" accept=".jpg,.png" id="imageFile" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary px-4">
+                        @(Model.StudentID == 0 ? "Create" : "Update")
+                    </button>
+                    <a asp-action="StudentList" class="btn btn-secondary">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#resumeFile").change(function () {
+                var file = this.files[0];
+                if (file && file.size / 1024 / 1024 > 2) {
+                    alert("Resume file must be less than 2MB.");
+                    $(this).val('');
+                }
+            });
+
+            $("#imageFile").change(function () {
+                var file = this.files[0];
+                if (file && file.size / 1024 / 1024 > 1) {
+                    alert("Image file must be less than 1MB.");
+                    $(this).val('');
+                }
+            });
+        });
+    </script>
+}

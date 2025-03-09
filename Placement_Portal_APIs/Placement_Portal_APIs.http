@@ -1,0 +1,6 @@
+@Placement_Portal_APIs_HostAddress = http://localhost:5075
+
+GET {{Placement_Portal_APIs_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

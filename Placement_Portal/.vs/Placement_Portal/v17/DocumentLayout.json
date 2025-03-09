@@ -1,0 +1,584 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Placement Management System\\Placement_Portal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\student\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\student\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\student\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\student\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\views\\user\\createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:views\\user\\createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\student\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\student\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\student\\views\\jobapplication\\jobapplications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\student\\views\\jobapplication\\jobapplications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\student\\controllers\\jobapplicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\student\\controllers\\jobapplicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\student\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\student\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\controllers\\studentdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\controllers\\studentdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\controllers\\jobapplicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\controllers\\jobapplicationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\student\\controllers\\studentdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\student\\controllers\\studentdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\student\\views\\studentdetails\\studentlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\student\\views\\studentdetails\\studentlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\student\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\student\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\services\\apiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:services\\apiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\views\\job\\joblist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\views\\job\\joblist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\views\\jobapplication\\jobapplications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\views\\jobapplication\\jobapplications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\views\\company\\companylist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\views\\company\\companylist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\views\\studentdetails\\studentlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\views\\studentdetails\\studentlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\checkaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:checkaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\commonvariable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:commonvariable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\student\\views\\job\\addeditjob.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\student\\views\\job\\addeditjob.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\views\\user\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:views\\user\\edituser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\views\\studentdetails\\addeditstudent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\views\\studentdetails\\addeditstudent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\admin\\views\\jobapplication\\editjobapplication.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\admin\\views\\jobapplication\\editjobapplication.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|d:\\placement management system\\placement_portal\\areas\\student\\models\\companymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62C04A-0B79-444F-AE99-F3EEE50CD7C3}|Placement_Portal.csproj|solutionrelative:areas\\student\\models\\companymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 30,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "JobApplications.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Views\\JobApplication\\JobApplications.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Student\\Views\\JobApplication\\JobApplications.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Views\\JobApplication\\JobApplications.cshtml",
+              "RelativeToolTip": "Areas\\Student\\Views\\JobApplication\\JobApplications.cshtml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAE0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-27T07:51:07.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-27T07:34:50.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "StudentList.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Views\\StudentDetails\\StudentList.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Student\\Views\\StudentDetails\\StudentList.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Views\\StudentDetails\\StudentList.cshtml",
+              "RelativeToolTip": "Areas\\Student\\Views\\StudentDetails\\StudentList.cshtml",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAAANAAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-27T07:01:13.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "JobApplicationController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Controllers\\JobApplicationController.cs",
+              "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\JobApplicationController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Controllers\\JobApplicationController.cs",
+              "RelativeToolTip": "Areas\\Student\\Controllers\\JobApplicationController.cs",
+              "ViewState": "AgIAAM0AAAAAAAAAAAAswA8BAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T06:54:31.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "APIServices.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Services\\APIServices.cs",
+              "RelativeDocumentMoniker": "Services\\APIServices.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Services\\APIServices.cs",
+              "RelativeToolTip": "Services\\APIServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T05:54:04.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "Models\\UserModel.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Models\\UserModel.cs",
+              "RelativeToolTip": "Models\\UserModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T05:24:42.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\AuthService.cs",
+              "RelativeDocumentMoniker": "AuthService.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\AuthService.cs",
+              "RelativeToolTip": "AuthService.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T17:15:09.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "JobList.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\Job\\JobList.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Job\\JobList.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\Job\\JobList.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Job\\JobList.cshtml",
+              "ViewState": "AgIAANAAAAAAAAAAAAAmwNcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-25T16:00:25.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "JobApplications.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\JobApplication\\JobApplications.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\JobApplication\\JobApplications.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\JobApplication\\JobApplications.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\JobApplication\\JobApplications.cshtml",
+              "ViewState": "AgIAALUAAAAAAAAAAAAmwL8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-25T14:15:52.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CompanyList.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\Company\\CompanyList.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Company\\CompanyList.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\Company\\CompanyList.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Company\\CompanyList.cshtml",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAmwN0AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-25T14:09:10.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "StudentList.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\StudentDetails\\StudentList.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\StudentDetails\\StudentList.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\StudentDetails\\StudentList.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\StudentDetails\\StudentList.cshtml",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAmwJ4AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-25T13:12:14.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-25T13:06:34.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Student\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Student\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAQwHoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-25T13:01:14.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StudentDetailsController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Controllers\\StudentDetailsController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\StudentDetailsController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Controllers\\StudentDetailsController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\StudentDetailsController.cs",
+              "ViewState": "AgIAAGgBAAAAAAAAAAAkwHIBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T05:35:16.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "JobController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Controllers\\JobController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\JobController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Controllers\\JobController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\JobController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T05:35:16.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "JobApplicationController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Controllers\\JobApplicationController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\JobApplicationController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Controllers\\JobApplicationController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\JobApplicationController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T05:38:54.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T05:38:28.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CommonVariable.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\CommonVariable.cs",
+              "RelativeDocumentMoniker": "CommonVariable.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\CommonVariable.cs",
+              "RelativeToolTip": "CommonVariable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T05:34:48.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Controllers\\CompanyController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\CompanyController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Controllers\\CompanyController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\CompanyController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAAB4AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T05:34:32.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAH4AAAAAAAAAAIBJwIUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-22T12:51:19.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAuwBoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T12:36:12.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAAB8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T12:29:58.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "EditUser.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Views\\User\\EditUser.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\EditUser.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Views\\User\\EditUser.cshtml",
+              "RelativeToolTip": "Views\\User\\EditUser.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAIBJwCUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-20T12:26:07.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateUser.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Views\\User\\CreateUser.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\CreateUser.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Views\\User\\CreateUser.cshtml",
+              "RelativeToolTip": "Views\\User\\CreateUser.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-20T12:26:01.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AddEditStudent.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\StudentDetails\\AddEditStudent.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\StudentDetails\\AddEditStudent.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\StudentDetails\\AddEditStudent.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\StudentDetails\\AddEditStudent.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAIBJwGYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-20T12:24:54.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "EditJobApplication.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\JobApplication\\EditJobApplication.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\JobApplication\\EditJobApplication.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Admin\\Views\\JobApplication\\EditJobApplication.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\JobApplication\\EditJobApplication.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAIBJwFwAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-20T12:24:04.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AddEditJob.cshtml",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Views\\Job\\AddEditJob.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Student\\Views\\Job\\AddEditJob.cshtml",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Views\\Job\\AddEditJob.cshtml",
+              "RelativeToolTip": "Areas\\Student\\Views\\Job\\AddEditJob.cshtml",
+              "ViewState": "AgIAAE4AAAAAAAAAAIBJwF0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-20T06:58:40.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\StudentController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "Areas\\Student\\Controllers\\StudentController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T05:55:56.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "StudentDetailsController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Controllers\\StudentDetailsController.cs",
+              "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\StudentDetailsController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Controllers\\StudentDetailsController.cs",
+              "RelativeToolTip": "Areas\\Student\\Controllers\\StudentDetailsController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAowBcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T05:47:19.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "JobController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Controllers\\JobController.cs",
+              "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\JobController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Controllers\\JobController.cs",
+              "RelativeToolTip": "Areas\\Student\\Controllers\\JobController.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAgwJYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T05:47:15.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\DashboardController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Areas\\Student\\Controllers\\DashboardController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAwCAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T05:47:04.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Controllers\\CompanyController.cs",
+              "RelativeDocumentMoniker": "Areas\\Student\\Controllers\\CompanyController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Controllers\\CompanyController.cs",
+              "RelativeToolTip": "Areas\\Student\\Controllers\\CompanyController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA1wCQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T05:46:59.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CompanyModel.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Models\\CompanyModel.cs",
+              "RelativeDocumentMoniker": "Areas\\Student\\Models\\CompanyModel.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Areas\\Student\\Models\\CompanyModel.cs",
+              "RelativeToolTip": "Areas\\Student\\Models\\CompanyModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T05:46:57.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAALQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T05:45:18.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CheckAccess.cs",
+              "DocumentMoniker": "D:\\Placement Management System\\Placement_Portal\\CheckAccess.cs",
+              "RelativeDocumentMoniker": "CheckAccess.cs",
+              "ToolTip": "D:\\Placement Management System\\Placement_Portal\\CheckAccess.cs",
+              "RelativeToolTip": "CheckAccess.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAlwBAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-20T05:45:08.307Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+﻿@model Placement_Portal.Areas.Admin.Models.JobModel;
+
+<div >
+    <div class="container mt-5">
+        <div class="card shadow-lg p-4">
+            <h2 class="text-center text-white bg-primary p-3 rounded">
+                @(Model.JobID > 0 ? "Edit Job" : "Create Job")
+            </h2>
+
+            <form asp-action="SaveJob" method="post">
+                <input type="hidden" asp-for="JobID" />
+
+                <div class="row">
+                    <!-- Job Title -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="JobTitle" class="fw-bold">Job Title</label>
+                            <input asp-for="JobTitle" class="form-control rounded-3 p-2" placeholder="Enter Job Title"  />
+                            <span asp-validation-for="JobTitle" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!-- Company Dropdown -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="CompanyID" class="fw-bold">Company Name</label>
+                            <select asp-for="CompanyID" asp-items="ViewBag.CompanyList" class="form-control rounded-3 p-2" >
+                                <option value="">-- Select Company --</option>
+                            </select>
+                            <span asp-validation-for="CompanyID" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Contact No -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="Contact_No" class="fw-bold">Contact No</label>
+                            <input asp-for="Contact_No" class="form-control rounded-3 p-2" placeholder="Enter Contact Number"  />
+                            <span asp-validation-for="Contact_No" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="Email" class="fw-bold">Email</label>
+                            <input asp-for="Email" class="form-control rounded-3 p-2" placeholder="Enter Email"  />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Position -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="Position" class="fw-bold">Position</label>
+                            <input asp-for="Position" class="form-control rounded-3 p-2" placeholder="Enter Position"  />
+                            <span asp-validation-for="Position" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!-- Job Profile -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="JobProfile" class="fw-bold">Job Profile</label>
+                            <textarea asp-for="JobProfile" class="form-control rounded-3 p-2" placeholder="Enter Job Profile" ></textarea>
+                            <span asp-validation-for="JobProfile" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Date of Drive -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="DateOfDrive" class="fw-bold">Date of Drive</label>
+                            <input type="date" asp-for="DateOfDrive" class="form-control rounded-3 p-2"  />
+                            <span asp-validation-for="DateOfDrive" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!-- Salary Per Month -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="SalaryPerMonth" class="fw-bold">Salary Per Month</label>
+                            <input asp-for="SalaryPerMonth" class="form-control rounded-3 p-2" placeholder="Enter Salary Per Month"  />
+                            <span asp-validation-for="SalaryPerMonth" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Location -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="Location" class="fw-bold">Location</label>
+                            <input asp-for="Location" class="form-control rounded-3 p-2" placeholder="Enter Location"  />
+                            <span asp-validation-for="Location" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg px-4">
+                        @(Model.JobID > 0 ? "Update Job" : "Create Job")
+                    </button>
+                    <a asp-action="JobList" class="btn btn-secondary btn-lg px-4 ms-3">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -1,0 +1,196 @@
+﻿@model IEnumerable<Placement_Portal.Areas.Admin.Models.JobApplicationModel>
+
+<!-- Include DataTables, Toastr & SweetAlert -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .btn-report {
+        background: #28a745;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+        .btn-report:hover {
+            background: #218838;
+        }
+
+    .table-responsive {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    .table th, .table td {
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    .table thead th {
+        background-color: lightslategray;
+        padding: 12px 20px;
+        font-size: 18px;
+        color: white;
+    }
+
+    .btn-action {
+        padding: 6px 10px;
+        font-size: 14px;
+        border-radius: 6px;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    #main {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+    }
+</style>
+
+<div>
+    <div class="header-container">
+        <h2 class="text-primary"><b>Job Applications</b></h2>
+        <div>
+            <a asp-area="Admin" asp-controller="JobApplication" asp-action="ExportToExcel" class="btn-report">
+                <i class="fas fa-download"></i> Download Report
+            </a>
+        </div>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped datatable">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Job Title</th>
+                    <th>Company Name</th>
+                    <th>Gender</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Application Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var application in Model)
+                    {
+                        <tr>
+                            <td>@application.StudentName</td>
+                            <td>@application.JobTitle</td>
+                            <td>@application.CompanyName</td>
+                            <td>@application.Gender</td>
+                            <td>@application.Phone_No</td>
+                            <td>@application.Email</td>
+                            <td>@application.ApplicationDateTime.ToString("yyyy-MM-dd HH:mm")</td>
+                            <td class="action-buttons">
+                                <a href="@Url.Action("EditJobApplication", "JobApplication", new { id = application.ApplicationID })" class="btn btn-outline-success btn-sm">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form asp-action="DeleteApplication" asp-route-id="@application.ApplicationID" method="post" class="delete-form">
+                                    <button type="button" class="btn btn-outline-danger btn-sm delete-button">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="9" class="text-center">No job applications found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.datatable').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "info": true
+        });
+
+        var successMessage = '@TempData["SuccessMessage"]';
+        if (successMessage) {
+            Swal.fire({
+                title: "Success!",
+                text: successMessage,
+                icon: "success",
+                timer: 5000,
+                showConfirmButton: false
+            });
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".delete-button").forEach(button => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+                const form = this.closest(".delete-form");
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
+        });
+    });
+</script>

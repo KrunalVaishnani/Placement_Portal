@@ -1,0 +1,138 @@
+﻿@model IEnumerable<Placement_Portal.Areas.Student.Models.JobApplicationModel>
+
+<!-- Include DataTables & Toastr -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+    .table thead th {
+        background-color: lightslategray;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .table-responsive {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    .table th, .table td {
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    .table th {
+        background-color: #f8f9fa;
+    }
+
+    #main {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .table {
+        width: 100%;
+        table-layout: auto;
+    }
+</style>
+
+<div id="main">
+    <div class="header-container">
+        <h2 class="text-primary"><b>Job Applications</b></h2>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped datatable">
+            <thead class="thead-light">
+                <tr>
+                    <th>Student Name</th>
+                    <th>Job Title</th>
+                    <th>Company Name</th>
+                    <th>Gender</th>
+                    <th>Contact No</th>
+                    <th>Email</th>
+                    <th>Application Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var application in Model)
+                    {
+                        <tr>
+                            <td>@application.StudentName</td>
+                            <td>@application.JobTitle</td>
+                            <td>@application.CompanyName</td>
+                            <td>@application.Gender</td>
+                            <td>@application.Phone_No</td>
+                            <td>@application.Email</td>
+                            <td>@application.ApplicationDateTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="7" class="text-center">No job applications found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.datatable').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "info": true
+        });
+
+        var successMessage = '@TempData["SuccessMessage"]';
+        if (successMessage) {
+            Swal.fire({
+                title: "Success!",
+                text: successMessage,
+                icon: "success",
+                timer: 5000,
+                showConfirmButton: false
+            });
+        }
+    });
+</script>

@@ -1,0 +1,153 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Register.cshtml";
+}
+
+@model UserRegisterModel;
+
+<style>
+    :root {
+        --primary-color: #007bff;
+        --secondary-color: #ff4d4d;
+        --background-color: #f0f2f5;
+        --text-color: #333;
+        --card-bg-color: #ffffff;
+        --form-border-color: #cccccc;
+        --button-hover: #ff1a1a;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: var(--text-color);
+    }
+
+    .register-container {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .register-card {
+        background-color: var(--card-bg-color);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        height:100%;
+        max-width: 450px;
+        min-height: 400px;
+        text-align: center;
+    }
+
+    .logo img {
+        max-height: 120px;
+        margin-bottom: 15px;
+    }
+
+    .register-card h5 {
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    .form-control {
+        border: 2px solid var(--form-border-color);
+        border-radius: 8px;
+        padding: 12px;
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+    .btn-primary {
+        background: var(--secondary-color);
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background: var(--button-hover);
+        }
+
+    .form-check-label {
+        font-size: 14px;
+    }
+
+    .text-info a {
+        color: var(--secondary-color);
+        font-weight: bold;
+    }
+
+        .text-info a:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<div class="register-container">
+    <div class="register-card">
+        <div class="logo">
+            <img src="~/img/Placement_Logo.png" alt="Placement Logo">
+        </div>
+        <h5>Create an Account</h5>
+        <p class="text-muted">Enter your details to sign up</p>
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+
+        <form asp-action="UserRegister" asp-controller="User" method="post">
+            <div class="mb-3">
+                <input type="text" asp-for="UserName" class="form-control" placeholder="Username">
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <input type="password" asp-for="Password" class="form-control" placeholder="Password">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <input type="email" asp-for="Email" class="form-control" placeholder="Email">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <input type="tel" asp-for="Contact_No" class="form-control" placeholder="Contact Number">
+                <span asp-validation-for="Contact_No" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <select asp-for="Role" class="form-control">
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Student">Student</option>
+                </select>
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 form-check">
+                <input class="form-check-input" type="checkbox" id="terms" required>
+                <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+
+            <p class="text-info mt-3">Already have an account? <a asp-controller="User" asp-action="UserLogin">Login</a></p>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

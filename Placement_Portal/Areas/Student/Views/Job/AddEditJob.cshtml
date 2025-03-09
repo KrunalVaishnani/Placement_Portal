@@ -1,0 +1,100 @@
+﻿@model Placement_Portal.Areas.Student.Models.JobModel;
+
+<h2>@(Model.JobID > 0 ? "Edit Job" : "Create Job")</h2>
+
+<form asp-action="SaveJob" method="post" enctype="multipart/form-data">
+    @if (Model.JobID > 0)
+    {
+        <input type="hidden" asp-for="JobID" />
+    }  
+
+    <!-- Job Title -->
+    <div class="form-group">
+        <label for="JobTitle">Job Title</label>
+        <input asp-for="JobTitle" class="form-control" placeholder="Enter Job Title" />
+        <span asp-validation-for="JobTitle" class="text-danger"></span>
+    </div>
+
+    <!-- Company ID -->
+    <div class="form-group">
+        <label for="CompanyID">Company ID</label>
+        <input asp-for="CompanyID" class="form-control" placeholder="Enter Company ID" />
+        <span asp-validation-for="CompanyID" class="text-danger"></span>
+    </div>
+
+    <!-- Contact No -->
+    <div class="form-group">
+        <label for="Contact_No">Contact No</label>
+        <input asp-for="Contact_No" class="form-control" placeholder="Enter Contact Number" />
+        <span asp-validation-for="Contact_No" class="text-danger"></span>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input asp-for="Email" class="form-control" placeholder="Enter Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <!-- Position -->
+    <div class="form-group">
+        <label for="Position">Position</label>
+        <input asp-for="Position" class="form-control" placeholder="Enter Position" />
+        <span asp-validation-for="Position" class="text-danger"></span>
+    </div>
+
+    <!-- Job Profile -->
+    <div class="form-group">
+        <label for="JobProfile">Job Profile</label>
+        <textarea asp-for="JobProfile" class="form-control" placeholder="Enter Job Profile"></textarea>
+        <span asp-validation-for="JobProfile" class="text-danger"></span>
+    </div>
+
+    <!-- Date of Drive -->
+    <div class="form-group">
+        <label for="DateOfDrive">Date of Drive</label>
+        <input type="date" asp-for="DateOfDrive" class="form-control" />
+        <span asp-validation-for="DateOfDrive" class="text-danger"></span>
+    </div>
+
+    <!-- Salary Per Month -->
+    <div class="form-group">
+        <label for="SalaryPerMonth">Salary Per Month</label>
+        <input asp-for="SalaryPerMonth" class="form-control" placeholder="Enter Salary Per Month" />
+        <span asp-validation-for="SalaryPerMonth" class="text-danger"></span>
+    </div>
+
+   @*  <!-- Image -->
+    <div class="form-group">
+        <label for="Image">Image</label>
+        <input type="file" asp-for="Image" class="form-control" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+
+        @if (!string.IsNullOrEmpty(Model.Image))
+        {
+            <div class="mt-2">
+                <img src="http://localhost:5075/api/Job/GetImage/@Model.Image" alt="Current Job Image" style="width: 100px; height: 100px;" />
+                <p>Current Image</p>
+            </div>
+        }
+    </div> *@
+
+    <!-- Location -->
+    <div class="form-group">
+        <label for="Location">Location</label>
+        <input asp-for="Location" class="form-control" placeholder="Enter Location" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-actions text-center">
+        <button type="submit" class="btn btn-primary">
+            @(Model.JobID > 0 ? "Update" : "Create")
+        </button>
+        <a asp-action="JobList" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

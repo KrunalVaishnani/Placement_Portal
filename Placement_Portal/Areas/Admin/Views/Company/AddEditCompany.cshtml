@@ -1,0 +1,122 @@
+﻿@model Placement_Portal.Areas.Admin.Models.CompanyModel
+<div >
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center text-white bg-primary p-3 rounded">
+            @(Model?.CompanyID == null ? "Create New Company" : "Edit Company")
+        </h2>
+
+        <form asp-area="Admin" asp-action="SaveCompany" method="post" enctype="multipart/form-data">
+            @if (Model?.CompanyID > 0)
+            {
+                <input type="hidden" asp-for="CompanyID" />
+            }
+
+            <div class="row">
+                <!-- Company Name -->
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="CompanyName" class="fw-bold">Company Name</label>
+                        <input asp-for="CompanyName" class="form-control rounded-3 p-2" placeholder="Enter Company Name" />
+                        <span asp-validation-for="CompanyName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Contact No -->
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="Contact_No" class="fw-bold">Contact No</label>
+                        <input asp-for="Contact_No" class="form-control rounded-3 p-2" placeholder="Enter Contact Number" />
+                        <span asp-validation-for="Contact_No" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="Email" class="fw-bold">Email</label>
+                        <input type="email" asp-for="Email" class="form-control rounded-3 p-2" placeholder="Enter Email"  />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Pincode -->
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label for="Pincode" class="fw-bold">Pincode</label>
+                        <input asp-for="Pincode" class="form-control rounded-3 p-2" placeholder="Enter Pincode"  />
+                        <span asp-validation-for="Pincode" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="col-md-12">
+                    <div class="form-group mb-3">
+                        <label for="Address" class="fw-bold">Address</label>
+                        <textarea asp-for="Address" class="form-control rounded-3 p-2" placeholder="Enter Address"></textarea>
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Company Logo -->
+                <div class="col-md-12">
+                    <div class="form-group mb-3">
+                        <label for="imageFile" class="fw-bold">Company Logo</label>
+                        <input type="file" id="imageFile" name="imageFile" class="form-control rounded-3" accept="image/jpeg, image/png" aria-describedby="fileHelp" />
+                        <small id="fileHelp" class="form-text text-muted">Only JPG and PNG images allowed (Max 2MB)</small>
+                        <span class="text-danger d-block" id="imageError"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg px-4" id="submitBtn">
+                    @(Model?.CompanyID == null ? "Create" : "Update")
+                </button>
+                <a asp-action="CompanyList" class="btn btn-secondary btn-lg px-4 ms-3">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+@section Scripts {
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@4.0.0/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#imageFile").change(function () {
+                var file = this.files[0];
+                var errorMessage = $("#imageError");
+                var submitBtn = $("#submitBtn");
+
+                errorMessage.text(""); // Clear previous errors
+
+                if (file) {
+                    var fileSize = file.size / 1024 / 1024; // Convert bytes to MB
+                    var fileType = file.type.toLowerCase();
+                    var allowedTypes = ["image/jpeg", "image/jpg", "image/png"];
+
+                    if (!allowedTypes.includes(fileType)) {
+                        errorMessage.text("Only JPG and PNG images are allowed.");
+                        $(this).val('');
+                        submitBtn.prop('disabled', true);
+                    } else if (fileSize > 2) {
+                        errorMessage.text("Image file must be less than 2MB.");
+                        $(this).val('');
+                        submitBtn.prop('disabled', true);
+                    } else {
+                        submitBtn.prop('disabled', false);
+                    }
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,174 @@
+﻿@model IEnumerable<Placement_Portal.Areas.Student.Models.JobModel>;
+
+<!-- Include DataTables, Toastr & SweetAlert -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+    .table thead th {
+        background-color: lightslategray;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 18px;
+        white-space: nowrap;
+        color: white;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .table-responsive {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    .table th, .table td {
+        vertical-align: middle;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .table th {
+        background-color: #f8f9fa;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    #main {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+    }
+</style>
+
+<div >
+    <div class="header-container">
+        <h2 class="text-primary"><b>Job List</b></h2>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="table-responsive">
+        <table id="jobTable" class="table table-bordered table-striped" style="padding-top:20px">
+            <thead class="thead-light">
+                <tr>
+                    <th>Job Title</th>
+                    <th>Company Name</th>
+                    <th>Contact No</th>
+                    <th>Email</th>
+                    <th>Position</th>
+                    <th>Job Profile</th>
+                    <th>Date of Drive</th>
+                    <th>Salary (Per Month)</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var job in Model)
+                    {
+                        <tr>
+                            <td>@job.JobTitle</td>
+                            <td>@job.CompanyName</td>
+                            <td>@job.Contact_No</td>
+                            <td>@job.Email</td>
+                            <td>@job.Position</td>
+                            <td>@job.JobProfile</td>
+                            <td>@(job.DateOfDrive.HasValue ? job.DateOfDrive.Value.ToString("yyyy-MM-dd") : "N/A")</td>
+                            <td>@(job.SalaryPerMonth.HasValue ? job.SalaryPerMonth.Value.ToString("C") : "N/A")</td>
+                            <td>@job.Location</td>
+                            <td class="action-buttons">
+                                <form asp-area="Student" asp-controller="JobApplication" asp-action="AddJobApplication" asp-route-id="@job.JobID" method="post" class="apply-form">
+                                    <button type="button" class="btn btn-danger btn-sm apply-button" data-jobid="@job.JobID">
+                                        <i class="fas fa-paper-plane"></i> Apply
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="10" class="text-center">No jobs found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        if ($.fn.DataTable.isDataTable("#jobTable")) {
+            $('#jobTable').DataTable().destroy();
+        }
+
+        $('#jobTable').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".apply-button").forEach(button => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+                let jobId = this.getAttribute("data-jobid");
+                let form = this.closest(".apply-form");
+
+                Swal.fire({
+                    title: 'Apply for this job?',
+                    text: "Are you sure you want to apply for this job?",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, Apply!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+

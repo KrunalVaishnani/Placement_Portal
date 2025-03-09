@@ -1,0 +1,183 @@
+﻿@model Placement_Portal.Areas.Student.Models.StudentDetailsModel;
+
+<h2>@(Model.StudentID == 0 ? "Create New Student" : "Edit Student")</h2>
+
+<form asp-action="SaveStudent" method="post" enctype="multipart/form-data">
+    @if (Model.StudentID > 0)
+    {
+        <input type="hidden" asp-for="StudentID" />
+    }
+
+    <!-- Student Name -->
+    <div class="form-group">
+        <label for="StudentName">Student Name</label>
+        <input asp-for="StudentName" class="form-control" placeholder="Enter Student Name" required />
+        <span asp-validation-for="StudentName" class="text-danger"></span>
+    </div>
+
+    <!-- Enrollment No -->
+    <div class="form-group">
+        <label for="EnrollmentNo">Enrollment No</label>
+        <input asp-for="Enrollment_No" class="form-control" placeholder="Enter Enrollment Number" required />
+        <span asp-validation-for="Enrollment_No" class="text-danger"></span>
+    </div>
+
+    <!-- Gender Dropdown -->
+    <div class="form-group">
+        <label for="Gender">Gender</label>
+        <select asp-for="Gender" class="form-control" required>
+            <option value="">-- Select Gender --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+
+    <!-- Date of Birth -->
+    <div class="form-group">
+        <label for="DateOfBirth">Date of Birth</label>
+        <input type="date" asp-for="DateOfBirth" class="form-control" required />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <!-- Phone No -->
+    <div class="form-group">
+        <label for="Phone_No">Phone No</label>
+        <input asp-for="Phone_No" class="form-control" placeholder="Enter Phone Number" required />
+        <span asp-validation-for="Phone_No" class="text-danger"></span>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" asp-for="Email" class="form-control" placeholder="Enter Email" required />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <!-- Address -->
+    <div class="form-group">
+        <label for="Address">Address</label>
+        <textarea asp-for="Address" class="form-control" placeholder="Enter Address" required></textarea>
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <!-- SSC Percentage -->
+    <div class="form-group">
+        <label for="SSC_Percentage">SSC Percentage</label>
+        <input asp-for="SSC_Percentage" class="form-control" placeholder="Enter SSC Percentage" required />
+        <span asp-validation-for="SSC_Percentage" class="text-danger"></span>
+    </div>
+
+    <!-- Year of Passing SSC -->
+    <div class="form-group">
+        <label for="YearOfPassingSSC">Year of Passing SSC</label>
+        <input asp-for="YearOfPassingSSC" class="form-control" placeholder="Enter Year of Passing SSC" required />
+        <span asp-validation-for="YearOfPassingSSC" class="text-danger"></span>
+    </div>
+
+    <!-- HSC Percentage -->
+    <div class="form-group">
+        <label for="HSC_Percentage">HSC Percentage</label>
+        <input asp-for="HSC_Percentage" class="form-control" placeholder="Enter HSC Percentage" />
+        <span asp-validation-for="HSC_Percentage" class="text-danger"></span>
+    </div>
+
+    <!-- Year of Passing HSC -->
+    <div class="form-group">
+        <label for="YearOfPassingHSC">Year of Passing HSC</label>
+        <input asp-for="YearOfPassingHSC" class="form-control" placeholder="Enter Year of Passing HSC" />
+        <span asp-validation-for="YearOfPassingHSC" class="text-danger"></span>
+    </div>
+
+    <!-- UG CGPA -->
+    <div class="form-group">
+        <label for="UG_CGPA">UG CGPA</label>
+        <input asp-for="UG_CGPA" class="form-control" placeholder="Enter UG CGPA" />
+        <span asp-validation-for="UG_CGPA" class="text-danger"></span>
+    </div>
+
+    <!-- Year of Passing UG -->
+    <div class="form-group">
+        <label for="YearOfPassingUG">Year of Passing UG</label>
+        <input asp-for="YearOfPassingUG" class="form-control" placeholder="Enter Year of Passing UG" />
+        <span asp-validation-for="YearOfPassingUG" class="text-danger"></span>
+    </div>
+
+    <!-- Skills -->
+    <div class="form-group">
+        <label for="Skills">Skills</label>
+        <textarea asp-for="Skills" class="form-control" placeholder="Enter Skills"></textarea>
+        <span asp-validation-for="Skills" class="text-danger"></span>
+    </div>
+
+    <!-- Resume File -->
+    <div class="form-group">
+        <label for="Resume">Resume (PDF, Max 2MB)</label>
+        <input type="file" name="resumeFile" class="form-control" accept=".pdf" id="resumeFile" />
+        <span asp-validation-for="Resume" class="text-danger"></span>
+    </div>
+
+    <!-- Image File -->
+    <div class="form-group">
+        <label for="Image">Image (JPG, PNG, Max 1MB)</label>
+        <input type="file" name="imageFile" class="form-control" accept=".jpg,.png" id="imageFile" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <!-- Status Dropdown -->
+    <div class="form-group">
+        <label asp-for="Status">Status</label>
+        <select asp-for="Status" class="form-control" required>
+            <option value="">-- Select Status --</option>
+            <option value="Active">Placed</option>
+            <option value="Inactive">Not Placed</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <!-- Is Active Checkbox -->
+    <div class="form-group form-check">
+        <input type="hidden" asp-for="IsActive" value="true" />
+        <input type="checkbox" asp-for="IsActive" class="form-check-input" id="IsActive" />
+        <label class="form-check-label" for="IsActive">Is Active</label>
+        <span asp-validation-for="IsActive" class="text-danger"></span>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-actions text-center">
+        <button type="submit" class="btn btn-primary">
+            @(Model.StudentID == 0 ? "Create" : "Update")
+        </button>
+        <a asp-action="StudentList" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#resumeFile").change(function () {
+                var file = this.files[0];
+                if (file) {
+                    var fileSize = file.size / 1024 / 1024;
+                    if (fileSize > 2) {
+                        alert("Resume file must be less than 2MB.");
+                        $(this).val('');
+                    }
+                }
+            });
+
+            $("#imageFile").change(function () {
+                var file = this.files[0];
+                if (file) {
+                    var fileSize = file.size / 1024 / 1024;
+                    if (fileSize > 1) {
+                        alert("Image file must be less than 1MB.");
+                        $(this).val('');
+                    }
+                }
+            });
+        });
+    </script>
+}

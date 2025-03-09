@@ -1,0 +1,420 @@
+﻿@model Placement_Portal.Areas.Admin.Models.Dashboard
+
+<head>
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Include FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Custom CSS for improved UI */
+        .card-custom {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+            .card-custom:hover {
+                transform: translateY(-5px);
+            }
+
+        .card-gradient-primary {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: #fff;
+        }
+
+        .card-gradient-secondary {
+            background: linear-gradient(135deg, #6c757d, #adb5bd);
+            color: #fff;
+        }
+
+        .card-gradient-success {
+            background: linear-gradient(135deg, #28a745, #85e085);
+            color: #fff;
+        }
+
+        .card-gradient-danger {
+            background: linear-gradient(135deg, #dc3545, #ff6f61);
+            color: #fff;
+        }
+
+        .card-gradient-warning {
+            background: linear-gradient(135deg, #ffc107, #ffe066);
+            color: #fff;
+        }
+
+        .card-header-custom {
+            border-bottom: none;
+            background-color: transparent;
+        }
+
+        .table thead th {
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 400px;
+        }
+    </style>
+</head>
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Total Jobs -->
+        <div class="col-md-4 mb-3">
+            <div class="card card-custom card-gradient-primary">
+                <div class="card-body text-center">
+                    <h5 class="card-title"><i class="fas fa-briefcase"></i> Total Jobs</h5>
+                    <h2 class="fw-bold">@Model.TotalJobs</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Companies -->
+        <div class="col-md-4 mb-3">
+            <div class="card card-custom card-gradient-secondary">
+                <div class="card-body text-center">
+                    <h5 class="card-title"><i class="fas fa-building"></i> Total Companies</h5>
+                    <h2 class="fw-bold">@Model.TotalCompanies</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Students -->
+        <div class="col-md-4 mb-3">
+            <div class="card card-custom card-gradient-success">
+                <div class="card-body text-center">
+                    <h5 class="card-title"><i class="fas fa-user-graduate"></i> Total Students</h5>
+                    <h2 class="fw-bold">@Model.TotalStudents</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Job Applications -->
+        <div class="col-md-4 mb-3">
+            <div class="card card-custom card-gradient-danger">
+                <div class="card-body text-center">
+                    <h5 class="card-title"><i class="fas fa-file-alt"></i> Total Job Applications</h5>
+                    <h2 class="fw-bold">@Model.TotalApplications</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Users -->
+        <div class="col-md-4 mb-3">
+            <div class="card card-custom card-gradient-warning">
+                <div class="card-body text-center">
+                    <h5 class="card-title"><i class="fas fa-users"></i> Total Users</h5>
+                    <h2 class="fw-bold">@Model.TotalUsers</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart Section -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-custom">
+                    <div class="card-header card-header-custom bg-info text-white">
+                        <h3 class="mb-0"><i class="fas fa-chart-pie"></i> Table Statistics Chart</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="statsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Listings -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card card-custom">
+                <div class="card-header bg-dark text-white">
+                    <h3 class="mb-0"><i class="fas fa-briefcase"></i> Top 10 Job Opportunities</h3>
+                </div>
+                <div class="card-body">
+                    @if (Model.jobs != null && Model.jobs.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Job Title</th>
+                                        <th>Company</th>
+                                        <th>Contact No.</th>
+                                        <th>Email</th>
+                                        <th>Date of Drive</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var job in Model.jobs)
+                                    {
+                                        <tr>
+                                            <td>@job.JobTitle</td>
+                                            <td>@job.CompanyName</td>
+                                            <td><a href="tel:@job.Contact_No">@job.Contact_No</a></td>
+                                            <td><a href="mailto:@job.Email">@job.Email</a></td>
+                                            <td>@job.DateOfDrive</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning text-center">
+                            <i class="fas fa-exclamation-circle"></i> No job postings available.
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Companies -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card card-custom">
+                <div class="card-header bg-dark text-white">
+                    <h3 class="mb-0"><i class="fas fa-building"></i> Top 10 Companies Hiring</h3>
+                </div>
+                <div class="card-body">
+                    @if (Model.Companies != null && Model.Companies.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Company Name</th>
+                                        <th>Contact No.</th>
+                                        <th>Email</th>
+                                        <th>Address</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var company in Model.Companies)
+                                    {
+                                        <tr>
+                                            <td>@company.CompanyName</td>
+                                            <td><a href="tel:@company.Contact_No">@company.Contact_No</a></td>
+                                            <td><a href="mailto:@company.Email">@company.Email</a></td>
+                                            <td>@company.Address</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning text-center">
+                            <i class="fas fa-exclamation-circle"></i> No company records available.
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top 10 Student Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card card-custom">
+                <div class="card-header bg-dark text-white">
+                    <h3 class="mb-0"><i class="fas fa-user-graduate"></i> Top 10 Students</h3>
+                </div>
+                <div class="card-body">
+                    @if (Model.Students != null && Model.Students.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th><i class="fas fa-user"></i> Student Name</th>
+                                        <th><i class="fas fa-id-card"></i> Enrollment No</th>
+                                        <th><i class="fas fa-phone-alt"></i> Phone</th>
+                                        <th><i class="fas fa-info-circle"></i> Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var student in Model.Students)
+                                    {
+                                        <tr>
+                                            <td><strong>@student.StudentName</strong></td>
+                                            <td><a href="#" class="text-info">@student.Enrollment_No</a></td>
+                                            <td><a href="tel:@student.Phone_No" class="text-primary">@student.Phone_No</a></td>
+                                            <td><span class="badge bg-success">@student.Status</span></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning text-center">
+                            <i class="fas fa-exclamation-circle"></i> No Student records available.
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top 10 Job Applications Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card card-custom">
+                <div class="card-header bg-dark text-white">
+                    <h3 class="mb-0"><i class="fas fa-clipboard-list"></i> Top 10 Job Applications</h3>
+                </div>
+                <div class="card-body">
+                    @if (Model.JobApplications != null && Model.JobApplications.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th><i class="fas fa-user"></i> Student Name</th>
+                                        <th><i class="fas fa-briefcase"></i> Job Title</th>
+                                        <th><i class="fas fa-building"></i> Company Name</th>
+                                        <th><i class="fas fa-calendar-alt"></i> Application Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var jobApplication in Model.JobApplications)
+                                    {
+                                        <tr>
+                                            <td><strong>@jobApplication.StudentName</strong></td>
+                                            <td><a href="#" class="text-info">@jobApplication.JobTitle</a></td>
+                                            <td>@jobApplication.CompanyName</td>
+                                            <td><span class="badge bg-secondary">@jobApplication.ApplicationDateTime.ToShortDateString()</span></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning text-center">
+                            <i class="fas fa-exclamation-circle"></i> No Job Applications found.
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top 10 User Section -->
+    <div class="row mt-4 mb-5">
+        <div class="col-12">
+            <div class="card card-custom">
+                <div class="card-header bg-dark text-white">
+                    <h3 class="mb-0"><i class="fas fa-users"></i> Top 10 Users</h3>
+                </div>
+                <div class="card-body">
+                    @if (Model.Users != null && Model.Users.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th><i class="fas fa-user"></i> User Name</th>
+                                        <th><i class="fas fa-phone-alt"></i> Contact No.</th>
+                                        <th><i class="fas fa-envelope"></i> Email</th>
+                                        <th><i class="fas fa-user-tag"></i> Role</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var user in Model.Users)
+                                    {
+                                        <tr>
+                                            <td><strong>@user.UserName</strong></td>
+                                            <td><a href="tel:@user.Contact_No" class="text-primary">@user.Contact_No</a></td>
+                                            <td><a href="mailto:@user.Email" class="text-info">@user.Email</a></td>
+                                            <td><span class="badge bg-success">@user.Role</span></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning text-center">
+                            <i class="fas fa-exclamation-circle"></i> No Users found.
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var ctx = document.getElementById('statsChart').getContext('2d');
+
+        var data = {
+            labels: ["Jobs", "Companies", "Students", "Job Applications", "Users"],
+            datasets: [{
+                data: [
+    @Model.TotalJobs,
+    @Model.TotalCompanies,
+    @Model.TotalStudents,
+    @Model.TotalApplications,
+    @Model.TotalUsers
+                        ],
+                backgroundColor: [
+                    "#007bff", // Primary blue for Jobs
+                    "#6c757d", // Secondary gray for Companies
+                    "#28a745", // Success green for Students
+                    "#dc3545", // Danger red for Applications
+                    "#ffc107"  // Warning yellow for Users
+                ],
+                borderColor: "#fff",
+                borderWidth: 2
+            }]
+        };
+
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Dashboard Table Statistics',
+                    font: {
+                        size: 18
+                    }
+                }
+            }
+        };
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: data,
+            options: options
+        });
+    });
+</script>

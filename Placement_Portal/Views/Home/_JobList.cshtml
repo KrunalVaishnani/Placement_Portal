@@ -1,0 +1,59 @@
+﻿@model List<Placement_Portal.Models.JobModel>;
+@* @{
+    Console.WriteLine(Model.Count);
+} *@
+<div class="text-center" style="padding-top: 50px;">
+    <h2><b>Job List</b></h2>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<div class="tab-content">
+    <div id="tab-1" class="tab-pane fade show p-0 active">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var job in Model)
+            {
+                <div class="job-item p-4 mb-4">
+                    <div class="row g-4">
+                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                            <img class="flex-shrink-0 img-fluid border rounded" src="~/img/company-logo-placeholder.jpg" alt="" style="width: 80px; height: 80px;">
+                            <div class="text-start ps-4">
+                                <h5 class="mb-3">@job.JobTitle</h5>
+                                <span class="text-truncate me-3"><i class="fa fa-building text-primary me-2"></i>@job.CompanyName</span>
+                                <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>@job.Location</span>
+                                <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>@job.Position</span>
+                                <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i>@(job.SalaryPerMonth.HasValue ? job.SalaryPerMonth.Value.ToString("C") : "N/A")</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                            <div class="d-flex mb-3">
+                                <a class="btn btn-light btn-square me-3" href="#"><i class="far fa-heart text-primary"></i></a>
+                                <form asp-area="Student" asp-controller="JobApplication" asp-action="AddJobApplication" asp-route-id="@job.JobID" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure you want to apply for this job?');">Apply Now</button>
+                                </form>
+                            </div>
+                            <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Date of Drive: @(job.DateOfDrive.HasValue ? job.DateOfDrive.Value.ToString("yyyy-MM-dd") : "N/A")</small>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="text-center p-4">No jobs found.</div>
+        }
+    </div>
+</div>

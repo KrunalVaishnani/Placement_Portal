@@ -1,0 +1,279 @@
+﻿@model IEnumerable<Placement_Portal.Areas.Admin.Models.StudentDetailsModel>
+
+<!-- Include DataTables & Toastr -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+    .table thead th {
+        background-color: lightslategray;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 18px;
+        white-space: nowrap;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .btn-add {
+        background: #007bff;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+        .btn-add:hover {
+            background: #0056b3;
+        }
+
+    .student-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #007bff;
+        display: block;
+    }
+
+    .table-responsive {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    .table th, .table td {
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    .table th {
+        background-color: #f8f9fa;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+    }
+
+        .action-buttons .btn {
+            padding: 6px 10px;
+        }
+
+    #main {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+    }
+    /* Search Form Styles */
+    .search-form {
+        background-color: #fff;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+        .search-form .form-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-form input {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px 12px;
+            margin-right: 10px;
+            width: 250px;
+        }
+
+        .search-form button {
+            background-color: #007bff;
+            border: none;
+            padding: 9px 16px;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            .search-form button:hover {
+                background-color: #0056b3;
+            }
+
+    .download-report {
+        margin-left: 20px;
+    }
+
+        .download-report a {
+            background-color: #28a745;
+            color: #fff;
+            padding: 9px 16px;
+            border-radius: 4px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+            .download-report a:hover {
+                background-color: #218838;
+            }
+</style>
+
+<div>
+    <div class="header-container">
+        <h2 class="text-primary"><b>Student List</b></h2>
+        <a asp-area="Admin" asp-controller="StudentDetails" asp-action="AddEditStudent" class="btn-add">+ Add New Student</a>
+    </div>
+
+    <!-- Filter/Search Form with Download Report Button -->
+    <div class="search-form">
+        <form method="get" action="@Url.Action("FilterStudents", "StudentDetails", new { area = "Admin" })">
+            <input type="text" name="studentName" placeholder="Student Name" />
+            <input type="text" name="enrollmentNo" placeholder="Enrollment No" />
+            <button type="submit"><i class="fas fa-search"></i> Search</button>
+        </form>
+        <div class="download-report">
+            <a asp-area="Admin" asp-controller="StudentDetails" asp-action="ExportToExcel">
+                <i class="fas fa-download"></i> Download Report
+            </a>
+        </div>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <script>
+            Swal.fire({
+                title: "Success!",
+                text: "@TempData["SuccessMessage"]",
+                icon: "success",
+                timer: 5000,
+                showConfirmButton: false
+            });
+        </script>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped datatable">
+            <thead class="thead-light">
+                <tr>
+                    <th>Image</th>
+                    <th>Student Name</th>
+                    <th>Enrollment No</th>
+                    <th>Gender</th>
+                    <th>Date of Birth</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Skills</th>
+                    <th>Resume</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var student in Model)
+                    {
+                        var imageFileName = string.IsNullOrEmpty(student.Image)
+                        ? "https://via.placeholder.com/60"
+                        : $"http://localhost:5075/api/StudentDetails/GetImage/Image/{System.IO.Path.GetFileName(student.Image)}";
+
+                        var resumeFileName = string.IsNullOrEmpty(student.Resume)
+                        ? "<span class='text-muted'>No Resume Available</span>"
+                        : $"<a href='http://localhost:5075/api/StudentDetails/GetResume/Resume/{System.IO.Path.GetFileName(student.Resume)}' target='_blank' class='btn btn-outline-primary btn-sm'><i class='fas fa-download'></i> Download</a>";
+
+                        <tr>
+                            <td><img src="@imageFileName" alt="Student Image" class="student-img"></td>
+                            <td>@student.StudentName</td>
+                            <td>@student.Enrollment_No</td>
+                            <td>@student.Gender</td>
+                            <td>@student.DateOfBirth.ToShortDateString()</td>
+                            <td>@student.Phone_No</td>
+                            <td>@student.Email</td>
+                            <td>@student.Skills</td>
+                            <td>@Html.Raw(resumeFileName)</td>
+                            <td class="action-buttons">
+                                <a asp-area="Admin" asp-controller="StudentDetails" asp-action="AddEditStudent" asp-route-id="@student.StudentID" class="btn btn-outline-success btn-sm">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <form asp-area="Admin" asp-controller="StudentDetails" asp-action="DeleteStudent" asp-route-id="@student.StudentID" method="post" class="delete-form">
+                                    <button type="button" class="btn btn-outline-danger btn-sm delete-button">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="10" class="text-center">No students found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.datatable').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "info": true
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".delete-button").forEach(button => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+                const form = this.closest(".delete-form");
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "This action cannot be undone!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
+        });
+    });
+</script>

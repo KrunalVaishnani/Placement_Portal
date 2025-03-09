@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Placement_Portal.Models.StudentModel>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    .student-id {
+        width: 10%;
+    }
+
+    .student-name {
+        width: 20%;
+    }
+
+    .enrollment {
+        width: 20%;
+    }
+
+    .email {
+        width: 20%;
+    }
+
+    .action {
+        width: 20%;
+        text-align: center;
+    }
+</style>
+
+<div class="text-center" style="padding-top="50px">
+    <h2><b>Student List</b></h2>
+</div>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+@if (TempData["UpdateMsg"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["UpdateMsg"]
+    </div>
+}
+
+<div class="row mb-3">
+    <div class="col-sm-10">
+        <a asp-controller="Student" asp-action="Create" class="btn btn-primary">Add New Student</a>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th class="student-id text-center">ID</th>
+            <th class="student-name text-center">Name</th>
+            <th class="enrollment text-center">Enrollment No</th>
+            <th class="email text-center">Email</th>
+            <th class="action text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td class="text-center">@student.StudentID</td>
+                <td class="text-center">@student.StudentName</td>
+                <td class="text-center">@student.Enrollment_No</td>
+                <td class="text-center">@student.Email</td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@student.StudentID">
+                        <button class="btn btn-success m-1"><i class="ri-edit-2-line"></i> Edit</button>
+                    </a>
+                    <form asp-controller="Student" asp-action="Delete" asp-route-id="@student.StudentID" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger m-1" onclick="return confirm('Are you sure you want to delete this student?');">
+                            <i class="ri-delete-bin-fill"></i> Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
